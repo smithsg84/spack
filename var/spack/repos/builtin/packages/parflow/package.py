@@ -28,11 +28,10 @@ class Parflow(CMakePackage):
     depends_on('tcl@8.6.11')
     depends_on('mpi@3.0.0', when='+mpi')
     depends_on('hdf5@1.10.7 +mpi', when='+mpi')
-    depends_on('netcdf-c@4.5.0')
+    depends_on('netcdf-c@4.8.0')
     depends_on('silo@4.10.2 -hzip -fpzip')
     depends_on('hypre@2.20.0')
-
-    parallel = False
+    depends_on('curl')
 
     def cmake_args(self):
         """Populate cmake arguments for ParFlow."""
